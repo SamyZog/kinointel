@@ -1,0 +1,41 @@
+:root {
+	/* header height */
+	--h-desktop: 10rem;
+	--h-tablet: 7.5rem;
+	--h-mobile: 5rem;
+
+	/* layout height */
+	--l-desktop: calc(100vh - var(--h-desktop));
+	--l-tablet: calc(100vh - var(--h-tablet));
+	--l-mobile: calc(100vh - var(--h-mobile));
+
+	/* padding */
+	--p-xxs: 0.5rem;
+	--p-xs: 1rem;
+	--p-xs: 1rem;
+	--p-s: 1.5rem;
+	--p-m: 2rem;
+	--p-l: 2.5rem;
+	--p-xl: 3rem;
+
+	/* icons */
+	--i-xxs: 1rem;
+	--i-xs: 1.5rem;
+	--i-s: 2.25rem;
+	--i-m: 3rem;
+	--i-l: 4rem;
+	--i-xl: 5rem;
+	--i-xxl: 6rem;
+
+	/* gap */
+	--g-s: 0.5rem;
+	--g-m: 1.5rem;
+	--g-l: 2.5rem;
+	--g-xl: 3.5rem;
+
+	/* text */
+	--t-s: 1.5rem;
+	--t-m: 2.5rem;
+	--t-l: 3rem;
+	--t-xl: 5rem;
+}

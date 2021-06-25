@@ -1,0 +1,23 @@
+.Logo {
+	text-align: center;
+	color: var(--secondary);
+	font-size: var(--t-l);
+	width: 100%;
+
+	a {
+		font-family: "Josefin Sans", sans-serif;
+	}
+
+	span {
+		color: var(--common);
+		// adjust display so text-transform works
+		display: inline-block;
+		text-transform: capitalize;
+	}
+}
+
+@media screen and (max-width: 750px) {
+	.Logo {
+		font-size: var(--t-m);
+	}
+}

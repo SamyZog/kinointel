@@ -1,0 +1,17 @@
+:root {
+	font-size: 62.5%;
+	box-sizing: border-box;
+}
+
+body {
+	scroll-behavior: smooth;
+	line-height: 1.25;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}

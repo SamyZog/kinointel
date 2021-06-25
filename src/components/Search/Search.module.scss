@@ -1,0 +1,89 @@
+.Search {
+	display: flex;
+	justify-content: center;
+	height: var(--i-l);
+
+	&__dropdown {
+		height: inherit;
+		width: 15rem;
+	}
+
+	&__controls {
+		display: flex;
+	}
+
+	&__searchbar {
+		display: flex;
+		justify-content: space-between;
+		position: relative;
+		flex: 1;
+
+		input {
+			flex: 2;
+		}
+	}
+
+	&__search,
+	&__clear {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: var(--i-l);
+		height: inherit;
+		cursor: pointer;
+		background-color: var(--secondary);
+		border: none;
+
+		svg {
+			width: var(--i-s);
+			height: var(--i-s);
+			fill: var(--common);
+		}
+	}
+
+	&__clear {
+		svg {
+			width: var(--i-xs);
+			height: var(--i-xs);
+		}
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.Search {
+		&__dropdown {
+			width: 10rem;
+		}
+	}
+}
+
+@media screen and (max-width: 750px) {
+	.Search {
+		height: var(--i-m);
+
+		&__search,
+		&__clear {
+			width: var(--i-m);
+		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.Search {
+		&__dropdown {
+			width: 8rem;
+		}
+	}
+}
+
+@media screen and (max-width: 350px) {
+	.Search {
+		&__searchbar {
+			flex-basis: 100%;
+
+			input {
+				flex: 1;
+			}
+		}
+	}
+}

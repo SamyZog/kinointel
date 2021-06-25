@@ -1,53 +1,41 @@
 import Document, { Head, Html, Main, NextScript } from "next/document";
-import { ServerStyleSheet } from "styled-components";
 
 export default class MyDocument extends Document {
-	static async getInitialProps(ctx) {
-		const sheet = new ServerStyleSheet();
-		const originalRenderPage = ctx.renderPage;
-
-		try {
-			ctx.renderPage = () =>
-				originalRenderPage({
-					enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />),
-				});
-
-			const initialProps = await Document.getInitialProps(ctx);
-			return {
-				...initialProps,
-				styles: (
-					<>
-						{initialProps.styles}
-						{sheet.getStyleElement()}
-					</>
-				),
-			};
-		} finally {
-			sheet.seal();
-		}
-	}
-
 	render() {
 		return (
 			<Html>
-				<Head></Head>
+				<Head />
 				<body>
 					<script
 						dangerouslySetInnerHTML={{
 							__html: `
 							(function() {
-								var className;
-								var fallbackTheme = "light";
-								var agentTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-								var cachedTheme = localStorage.getItem("kinointel-theme");
-								if(cachedTheme === "dark" || cachedTheme === "light") {
-									className = cachedTheme;
+								window.__theme;
+								const cachedTheme = localStorage.getItem("kinointel-theme");
+								const agentThemeisDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+								if (cachedTheme === "dark" || cachedTheme === "light") {
+									__theme = cachedTheme;
+								} else if (agentThemeisDark) {
+									__theme = "dark";
+								} else {
+									__theme = "light";
 								}
-								if(agentTheme === "dark" || agentTheme === "light") {
-									className = agentTheme;
+
+								document.body.classList.add(__theme);
+
+								window.__switchTheme = function(isDark) {
+									if (isDark) {
+										document.body.classList.add("light");
+										document.body.classList.remove("dark");
+										__theme = "dark";
+									} else {
+										document.body.classList.add("dark");
+										document.body.classList.remove("light");
+										__theme = "light";
+									}
+									localStorage.setItem("kinointel-theme", isDark ? "light" : "dark");
 								}
-								document.body.classList.add(className);
-								localStorage.setItem("kinointel-theme", className);
 							}())
 					`,
 						}}

@@ -1,0 +1,81 @@
+.DropDown {
+	position: relative;
+	height: inherit;
+	width: 100%;
+
+	button {
+		border: none;
+		cursor: pointer;
+		background-color: var(--secondary);
+		color: var(--primary);
+	}
+
+	span {
+		height: inherit;
+		display: flex;
+		align-items: center;
+	}
+
+	&__current {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: inherit;
+		width: 100%;
+		overflow: hidden;
+		padding: var(--p-xs);
+	}
+
+	&__selected {
+		justify-content: flex-start;
+
+		svg {
+			height: 80%;
+		}
+	}
+
+	&__arrow {
+		transition-duration: var(--duration);
+		transition-property: transform;
+		justify-content: flex-end;
+
+		svg {
+			height: 40%;
+			fill: var(--common);
+		}
+	}
+
+	&__options {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		overflow: hidden;
+		width: 100%;
+		transition-duration: var(--duration);
+		transition-property: height;
+
+		button {
+			width: inherit;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			&:hover {
+				background-color: var(--contrast-d);
+				color: var(--contrast-l);
+			}
+
+			svg {
+				height: 80%;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 750px) {
+	.DropDown {
+		&__current {
+			padding: var(--p-xxs);
+		}
+	}
+}

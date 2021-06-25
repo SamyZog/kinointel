@@ -1,0 +1,24 @@
+body.light {
+	--primary: #f8f9fa;
+	--secondary: #212529;
+	--contrast-l: #6c757d;
+	--contrast-d: #ced4da;
+	--common: #9d4edd;
+	--links: #ffbc42;
+	--safe: #02c39a;
+	--danger: #ef233c;
+}
+
+body.dark {
+	--primary: #212529;
+	--secondary: #f8f9fa;
+	--contrast-l: #ced4da;
+	--contrast-d: #6c757d;
+	--common: #9d4edd;
+	--links: #ffbc42;
+	--safe: #02c39a;
+	--danger: #ef233c;
+}
+
+.active {
+}

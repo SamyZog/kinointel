@@ -1,0 +1,11 @@
+.LangSelector {
+	width: 8rem;
+	height: var(--i-l);
+}
+
+@media screen and (max-width: 750px) {
+	.LangSelector {
+		width: 6rem;
+		height: var(--i-m);
+	}
+}
