@@ -32,7 +32,8 @@ function DropDown(props) {
 			<div
 				className={styles.DropDown__options}
 				style={{ height: `${open ? buttonRef.current.offsetHeight * options.length : 0}px` }}>
-				{render(buttonRef.current && buttonRef.current.offsetHeight)}
+				{/* pass the height of the current option button to the subsequent options, second parameter is the state of the drop down menu (open or not open) */}
+				{render(buttonRef.current && buttonRef.current.offsetHeight, open)}
 			</div>
 		</div>
 	);

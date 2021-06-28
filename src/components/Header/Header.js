@@ -6,18 +6,20 @@ import styles from "./Header.module.scss";
 
 const Header = (props) => {
 	return (
-		<header className={styles.Header}>
-			<div>
-				<Logo />
-			</div>
-			<div className={styles.Header__search}>
-				<Search />
-			</div>
-			<div className={styles.Header__preferences}>
-				<LangSelector />
-				<ThemeSwitcher />
-			</div>
-		</header>
+		<>
+			<header className={styles.Header}>
+				<div>
+					<Logo />
+				</div>
+				<div className={styles.Header__search}>
+					<Search />
+				</div>
+				<div className={styles.Header__preferences}>
+					<LangSelector />
+					<ThemeSwitcher />
+				</div>
+			</header>
+		</>
 	);
 };
 

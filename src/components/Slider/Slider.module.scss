@@ -1,0 +1,95 @@
+.Slider {
+	width: 100%;
+	height: 400px;
+	margin: 0 auto;
+
+	&__window {
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
+		position: relative;
+	}
+
+	button {
+		width: var(--i-s);
+		height: var(--i-s);
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+
+		svg {
+			display: block;
+			width: 100%;
+			height: 100%;
+			fill: var(--common);
+		}
+	}
+
+	&__nextbtn,
+	&__prevbtn {
+		z-index: 100;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	&__nextbtn {
+		right: 0;
+
+		svg {
+			transform: rotate(-90deg);
+		}
+	}
+
+	&__prevbtn {
+		left: 0;
+
+		svg {
+			transform: rotate(90deg);
+		}
+	}
+
+	&__strip {
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		list-style-type: none;
+		transition-duration: var(--duration);
+	}
+
+	&__slide {
+		background-color: var(--primary);
+		height: 100%;
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+
+		a {
+			height: 100%;
+			width: 100%;
+		}
+	}
+}
+
+@media (hover: none) and (pointer: coarse) {
+	.Slider {
+		&__slide {
+			background-size: cover;
+		}
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.Slider {
+		height: 300px;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.Slider {
+		&__slide {
+			background-size: cover;
+		}
+	}
+}

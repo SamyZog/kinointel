@@ -1,0 +1,81 @@
+.Filters {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: var(--g-xl);
+	position: sticky;
+	top: 0;
+	z-index: 2000;
+
+	&__filtername {
+		color: var(--secondary);
+	}
+
+	&__sortby,
+	&__sortyear,
+	&__sortgenre {
+		width: 20rem;
+		height: var(--i-l);
+	}
+
+	&__sort,
+	&__year,
+	&__genre {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: column;
+		gap: var(--g-m);
+	}
+
+	&__yearscontainer,
+	&__genrescontainer {
+		width: 100%;
+		overflow-y: scroll;
+		transition-duration: var(--duration);
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.Filters {
+		&__sortby,
+		&__sortyear,
+		&__sortgenre {
+			height: var(--i-m);
+		}
+
+		&__sort,
+		&__year,
+		&__genre {
+			gap: var(--g-m);
+		}
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.Filters {
+		justify-content: center;
+		flex-wrap: wrap;
+		padding: 0 var(--p-s);
+
+		&__sortby,
+		&__sortyear,
+		&__sortgenre {
+			height: var(--i-s);
+		}
+
+		&__sortyear {
+			z-index: 999;
+		}
+
+		&__sortgenre {
+			z-index: 998;
+		}
+
+		&__sort,
+		&__year,
+		&__genre {
+			gap: var(--g-s);
+		}
+	}
+}

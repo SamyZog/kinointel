@@ -1,5 +1,12 @@
 .Layout {
-	padding: var(--g-xl);
+	padding: 0 var(--p-xl);
 	min-height: var(--l-desktop);
+	overflow: hidden;
 	background-color: var(--primary);
+}
+
+@media screen and (max-width: 850px) {
+	.Layout {
+		padding: 0;
+	}
 }

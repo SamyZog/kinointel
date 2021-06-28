@@ -5,12 +5,14 @@ import styles from "./CustomLink.module.scss";
 
 const CustomLink = (props) => {
 	const { pathname } = useRouter();
-	const { active, href, children, ...lastProps } = props;
+	const { active, href, children, passHref, style, ...lastProps } = props;
 	let activeClass = active && pathname.startsWith(href) ? "active" : "";
 
 	return (
-		<Link href={href} {...lastProps}>
-			<a className={`${styles.CustomLink} ${activeClass}`}>{children}</a>
+		<Link href={href} {...lastProps} passHref={passHref}>
+			<a style={style} className={`${styles.CustomLink} ${activeClass}`}>
+				{children}
+			</a>
 		</Link>
 	);
 };

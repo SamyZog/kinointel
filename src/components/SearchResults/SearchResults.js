@@ -3,6 +3,7 @@ import React from "react";
 import { Avatar, Film } from "../../../public/icons/app";
 import { useText } from "../../context/TextProvider";
 import CustomLink from "../CustomLink/CustomLink";
+import Divider from "../Divider/Divider";
 import Spinner from "../Spinner/Spinner";
 import styles from "./SearchResults.module.scss";
 
@@ -91,7 +92,7 @@ function SearchResults(props) {
 											</p>
 										</div>
 									</CustomLink>
-									<hr />
+									<Divider />
 								</li>
 							);
 						}

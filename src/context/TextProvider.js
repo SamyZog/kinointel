@@ -15,6 +15,25 @@ const text = {
 			votespluralplus: "голосов",
 			popularity: "популярность",
 			error: "ошибка",
+			filter: {
+				sortby: "сортировать",
+				year: "год",
+				genre: "жанр",
+				get years() {
+					const startingYear = 1999;
+					const currentYear = new Date().getFullYear();
+					const length = currentYear - startingYear;
+
+					return Array.from({ length }, (el, i) => startingYear + 1 + i).reverse();
+				},
+			},
+			sort: {
+				popular: "популярные",
+				yeardesc: "сначала новые",
+				yearasc: "сначала старые",
+				titleasc: "а-я",
+				titledesc: "я-а",
+			},
 			options: {
 				movies: "фильмы",
 				actors: "актёры",
@@ -34,6 +53,25 @@ const text = {
 			votespluralplus: "votes",
 			popularity: "popularity",
 			error: "error",
+			filter: {
+				sortby: "sort",
+				year: "year",
+				genre: "genre",
+				get years() {
+					const startingYear = 1999;
+					const currentYear = new Date().getFullYear();
+					const length = currentYear - startingYear;
+
+					return Array.from({ length }, (el, i) => startingYear + 1 + i).reverse();
+				},
+			},
+			sort: {
+				popular: "popular",
+				yeardesc: "new first",
+				yearasc: "old first",
+				titleasc: "a-z",
+				titledesc: "z-a",
+			},
 			options: {
 				movies: "movies",
 				actors: "actors",

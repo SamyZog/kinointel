@@ -1,4 +1,5 @@
 .SearchResults {
+	z-index: 1000;
 	width: 100%;
 	max-height: 50vh;
 	overflow-y: scroll;
@@ -17,6 +18,7 @@
 
 	&__errormsg {
 		color: var(--primary);
+		text-transform: capitalize;
 	}
 
 	// person
@@ -64,16 +66,6 @@
 
 	&__personRating {
 		// justify-self: end;
-	}
-
-	hr {
-		width: 95%;
-		position: relative;
-		left: 50%;
-		height: 2px;
-		border: none;
-		background-color: var(--common);
-		transform: translateX(-50%);
 	}
 
 	&__viewAll {

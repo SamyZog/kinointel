@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
-import React, { useState } from "react";
-import { v4 } from "uuid";
+import React from "react";
 import { En, Ru } from "../../../public/icons/language";
 import DropDown from "../DropDown/DropDown";
 import styles from "./LangSelector.module.scss";
@@ -8,13 +7,12 @@ import styles from "./LangSelector.module.scss";
 function LangSelector(props) {
 	const router = useRouter();
 	const options = [
-		{ id: 1, option: "en-US", Icon: <En /> },
-		{ id: 2, option: "ru-RU", Icon: <Ru /> },
+		{ option: "en-US", Icon: <En /> },
+		{ option: "ru-RU", Icon: <Ru /> },
 	];
-	const [currentOption, setCurrentOption] = useState(router.locale);
 
 	const setOption = (option) => {
-		setCurrentOption(option);
+		// https://nextjs.org/docs/advanced-features/i18n-routing#leveraging-the-next_locale-cookie
 		document.cookie = `NEXT_LOCALE=${option}`;
 		router.push(router.pathname, router.asPath, { locale: option, scroll: false });
 	};
@@ -23,11 +21,11 @@ function LangSelector(props) {
 		<div className={styles.LangSelector}>
 			<DropDown
 				options={options}
-				currentOption={currentOption === "en-US" ? <En /> : <Ru />}
+				currentOption={router.locale === "en-US" ? <En /> : <Ru />}
 				render={(height) => {
-					return options.map(({ id, option, Icon }) => {
+					return options.map(({ option, Icon }) => {
 						return (
-							<button onClick={setOption.bind(null, option)} key={v4()} style={{ height }}>
+							<button onClick={setOption.bind(null, option)} key={option} style={{ height }}>
 								{Icon}
 							</button>
 						);

@@ -6,8 +6,13 @@ function SearchBar(props) {
 	const { value, change, currentOption } = props;
 	const { text } = useText();
 
+	const selectText = (e) => {
+		e.target.select();
+	};
+
 	return (
 		<input
+			onClick={selectText}
 			type="text"
 			name=""
 			id=""
