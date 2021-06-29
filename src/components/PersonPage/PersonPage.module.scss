@@ -1,0 +1,70 @@
+.PersonPage {
+	color: var(--secondary);
+
+	section {
+		padding: var(--p-xl);
+	}
+
+	&__name {
+		font-size: var(--t-m);
+	}
+
+	&__name,
+	&__birthday,
+	&__birthplace {
+		text-transform: capitalize;
+	}
+
+	&__info {
+		overflow: auto;
+		padding: var(--p-xl);
+	}
+
+	&__img {
+		float: left;
+		height: 100%;
+		margin: 0 var(--p-l) var(--p-m) 0;
+	}
+
+	&__bioheader {
+		text-transform: uppercase;
+	}
+
+	&__bio {
+		height: 100%;
+		line-height: 2;
+		text-align: justify;
+		font-size: var(--t-s);
+	}
+
+	&__show {
+		height: 0;
+		border-color: transparent;
+		border: none;
+		cursor: pointer;
+		color: var(--common);
+		text-decoration: underline;
+	}
+
+	&__moviesort {
+		width: 30rem;
+		height: var(--i-xl);
+	}
+
+	&__wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: var(--g-xl);
+		padding: 0 var(--p-xl);
+		padding-bottom: var(--p-xl);
+	}
+
+	&__filmography {
+		text-transform: uppercase;
+	}
+
+	&__showcase {
+		padding: var(--p-xl) 0;
+	}
+}

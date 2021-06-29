@@ -1,7 +1,6 @@
 import React from "react";
 import { useText } from "../../context/TextProvider";
 import CustomLink from "../CustomLink/CustomLink";
-import Spinner from "../Spinner/Spinner";
 import styles from "./ShowCase.module.scss";
 
 function ShowCase(props) {
@@ -12,7 +11,7 @@ function ShowCase(props) {
 		<div className={styles.ShowCase}>
 			<ul className={styles.ShowCase__list}>
 				{data.length === 0 ? (
-					<Spinner />
+					<h1>no suggestions</h1>
 				) : (
 					data.map(({ id, title, release_date, poster_path, genre_ids }) => {
 						return (
@@ -28,17 +27,19 @@ function ShowCase(props) {
 										<p className={styles.ShowCase__year}>
 											{release_date && new Date(release_date).getFullYear()}
 										</p>
-										<div className={styles.ShowCase__genres}>
-											{text.placeholders.filter.genre}:
-											{genre_ids &&
-												genre_ids.map((genreId) => {
-													return (
-														<p key={genreId}>
-															{genres.filter((el) => el.id === genreId)[0].name}
-														</p>
-													);
-												})}
-										</div>
+										{genres && (
+											<div className={styles.ShowCase__genres}>
+												{text.placeholders.filter.genre}:
+												{genre_ids &&
+													genre_ids.map((genreId) => {
+														return (
+															<p key={genreId}>
+																{genres.filter((el) => el.id === genreId)[0].name}
+															</p>
+														);
+													})}
+											</div>
+										)}
 									</div>
 								</li>
 								<h4 className={styles.ShowCase__title}>

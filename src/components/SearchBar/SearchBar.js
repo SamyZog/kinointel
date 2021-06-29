@@ -7,6 +7,7 @@ function SearchBar(props) {
 	const { text } = useText();
 
 	const selectText = (e) => {
+		e.stopPropagation();
 		e.target.select();
 	};
 

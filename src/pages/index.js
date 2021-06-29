@@ -15,7 +15,7 @@ export async function getStaticProps(context) {
 	const res1 = await axios(urls[0]);
 	const res2 = await axios(urls[1]);
 
-	const [trending, genres, showcase] = await Promise.all([res1, res2]);
+	const [trending, genres] = await Promise.all([res1, res2]);
 
 	return {
 		revalidate: 60 * 60 * 12,

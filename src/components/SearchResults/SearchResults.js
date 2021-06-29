@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import React, { useEffect } from "react";
 import { Avatar, Film } from "../../../public/icons/app";
 import { useText } from "../../context/TextProvider";
 import CustomLink from "../CustomLink/CustomLink";
@@ -9,7 +9,16 @@ import styles from "./SearchResults.module.scss";
 
 function SearchResults(props) {
 	const { text } = useText();
-	const { data, error, option } = props;
+	const { data, error, option, setInputVal } = props;
+
+	const closeResults = () => {
+		setInputVal("");
+	};
+
+	useEffect(() => {
+		window.addEventListener("click", closeResults);
+		() => window.removeEventListener("click", closeResults);
+	}, []);
 
 	return (
 		<div className={styles.SearchResults}>
@@ -25,7 +34,7 @@ function SearchResults(props) {
 						if (option === "person") {
 							const { id, name, popularity, profile_path } = result;
 							return (
-								<li key={id} className={styles.SearchResults__personListItem}>
+								<li key={id} className={styles.SearchResults__personListItem} onClick={closeResults}>
 									<CustomLink href={`/person/${id}`}>
 										<div className={styles.SearchResults__personPoster}>
 											{profile_path ? (
@@ -49,7 +58,7 @@ function SearchResults(props) {
 						}
 
 						if (option === "movie") {
-							const { id, original_title, release_date, poster_path, vote_average, vote_count } = result;
+							const { id, title, release_date, poster_path, vote_average, vote_count } = result;
 
 							let votes;
 							let voteCount = vote_count.toString();
@@ -62,13 +71,13 @@ function SearchResults(props) {
 							}
 
 							return (
-								<li key={id} className={styles.SearchResults__movieListItem}>
+								<li key={id} className={styles.SearchResults__movieListItem} onClick={closeResults}>
 									<CustomLink href={`/movie/${id}`}>
 										<div className={styles.SearchResults__moviePoster}>
 											{poster_path ? (
 												<img
 													src={`https://image.tmdb.org/t/p/w200${poster_path}`}
-													alt={original_title}
+													alt={title}
 													className={styles.SearchResults__movieImage}
 												/>
 											) : (
@@ -76,9 +85,7 @@ function SearchResults(props) {
 											)}
 										</div>
 										<div className={styles.SearchResults__movieInfo}>
-											<p className={styles.SearchResults__movieName}>
-												{original_title.toUpperCase()}
-											</p>
+											<p className={styles.SearchResults__movieName}>{title.toUpperCase()}</p>
 											<p className={styles.SearchResults__movieYear}>
 												{release_date && new Date(release_date).getFullYear()}
 											</p>

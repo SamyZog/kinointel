@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import useSWR from "swr";
 import { v4 } from "uuid";
 import { Close, Loupe } from "../../../public/icons/app";
@@ -17,6 +17,15 @@ function Search(props) {
 	const optionsText = [text.placeholders.options.movies, text.placeholders.options.actors];
 	const [inputVal, setInputVal] = useState("");
 	const [currentOption, setCurrentOption] = useState("movie");
+	const [open, setOpen] = useState(false);
+
+	useEffect(() => {
+		if (inputVal.length > 0) {
+			setOpen(true);
+		} else {
+			setOpen(false);
+		}
+	}, [inputVal]);
 
 	const { data, error } = useSWR(
 		inputVal.length > 0
@@ -64,7 +73,15 @@ function Search(props) {
 				<button className={styles.Search__clear} onClick={clearInput}>
 					<Close />
 				</button>
-				{inputVal.length > 0 && <SearchResults data={data} error={error} option={currentOption} />}
+				{open && (
+					<SearchResults
+						data={data}
+						error={error}
+						option={currentOption}
+						setOpen={setOpen}
+						setInputVal={setInputVal}
+					/>
+				)}
 			</div>
 		</div>
 	);
