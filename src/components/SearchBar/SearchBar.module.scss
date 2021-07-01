@@ -5,6 +5,7 @@
 
 	&:focus {
 		outline: none;
+		background-color: var(--contrast-d);
 	}
 
 	&::placeholder {
