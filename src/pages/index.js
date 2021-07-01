@@ -16,8 +16,8 @@ export default function Home(props) {
 
 export async function getStaticProps(context) {
 	let urls = [
-		`https://api.themoviedb.org/3/trending/movie/week?api_key=a319ba0db74b862fec8c89164cc8ba8b`,
-		`https://api.themoviedb.org/3/genre/movie/list?api_key=a319ba0db74b862fec8c89164cc8ba8b&language=${context.locale}`,
+		`https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.TMDB_API_KEY}`,
+		`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.TMDB_API_KEY}&language=${context.locale}`,
 	];
 
 	const res1 = await axios(urls[0]);
