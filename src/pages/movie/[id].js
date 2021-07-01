@@ -30,7 +30,7 @@ function Movie(props) {
 export default Movie;
 
 export async function getStaticPaths(context) {
-	// too manny paths to pre-render, we set fallback to true https://nextjs.org/docs/basic-features/data-fetching#when-is-fallback-true-useful
+	// too many paths to pre-render, we set fallback to true https://nextjs.org/docs/basic-features/data-fetching#when-is-fallback-true-useful
 	// used fallback: true over fallback: "blocking" to load the page faster from the user's perspective https://nextjs.org/docs/basic-features/data-fetching#fallback-blocking
 	return { paths: [], fallback: true };
 }
