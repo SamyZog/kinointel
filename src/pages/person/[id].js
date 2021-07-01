@@ -33,7 +33,7 @@ export default Person;
 export async function getStaticPaths(context) {
 	// too manny paths to pre-render, we set fallback to true https://nextjs.org/docs/basic-features/data-fetching#when-is-fallback-true-useful
 	// used fallback: true over fallback: "blocking" to load the page faster from the user's perspective https://nextjs.org/docs/basic-features/data-fetching#fallback-blocking
-	return { paths: [{ params: { id: "520763" } }], fallback: true };
+	return { paths: [], fallback: true };
 }
 
 export async function getStaticProps(context) {
