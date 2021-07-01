@@ -37,15 +37,15 @@ export async function getStaticPaths(context) {
 
 export async function getStaticProps(context) {
 	const res1 = await axios(
-		`https://api.themoviedb.org/3/movie/${context.params.id}?api_key=${process.env.TMDB_API_KEY}&language=${context.locale}`,
+		`https://api.themoviedb.org/3/movie/${context.params.id}?api_key=a319ba0db74b862fec8c89164cc8ba8b&language=${context.locale}`,
 	);
 
 	const res2 = await axios(
-		`https://api.themoviedb.org/3/movie/${context.params.id}/similar?api_key=${process.env.TMDB_API_KEY}&language=${context.locale}&page=1`,
+		`https://api.themoviedb.org/3/movie/${context.params.id}/similar?api_key=a319ba0db74b862fec8c89164cc8ba8b&language=${context.locale}&page=1`,
 	);
 
 	const res3 = await axios(
-		`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.TMDB_API_KEY}&language=${context.locale}`,
+		`https://api.themoviedb.org/3/genre/movie/list?api_key=a319ba0db74b862fec8c89164cc8ba8b&language=${context.locale}`,
 	);
 
 	const [movie, similarMovies, genres] = await Promise.all([res1, res2, res3]);

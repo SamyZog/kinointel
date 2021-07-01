@@ -26,7 +26,7 @@ function Search(props) {
 
 	const { data, error } = useSWR(
 		inputVal.length > 0
-			? `https://api.themoviedb.org/3/search/${currentOption}?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}&language=${locale}&query=${inputVal}&page=1&include_adult=false`
+			? `https://api.themoviedb.org/3/search/${currentOption}?api_key=a319ba0db74b862fec8c89164cc8ba8b&language=${locale}&query=${inputVal}&page=1&include_adult=false`
 			: null,
 		(url) => axios(url).then((res) => res.data),
 	);
