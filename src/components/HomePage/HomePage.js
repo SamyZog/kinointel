@@ -28,7 +28,7 @@ function HomePage(props) {
 
 	// we statically generate the data (trending, genres) in the parent component (which is the index.js page), the useSWR hook is here to fetch the filtered results based on the same endpoint from the movieDB https://developers.themoviedb.org/3/discover/movie-discover
 	const { data, error } = useSWR(
-		`https://api.themoviedb.org/3/discover/movie?api_key=a319ba0db74b862fec8c89164cc8ba8b&language=${locale}&sort_by=${
+		`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=${locale}&sort_by=${
 			filters.sort
 		}&include_adult=false&include_video=false&page=${page}${
 			filters.year ? `&primary_release_year=${filters.year}` : ""
