@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useEffect } from "react";
+import React, { forwardRef, useEffect } from "react";
 import { Avatar, Film } from "../../../public/icons/app";
 import { useText } from "../../context/TextProvider";
 import CustomLink from "../CustomLink/CustomLink";
@@ -7,18 +7,34 @@ import Divider from "../Divider/Divider";
 import Spinner from "../Spinner/Spinner";
 import styles from "./SearchResults.module.scss";
 
-function SearchResults(props) {
+const SearchResults = (props, ref) => {
 	const { text } = useText();
-	const { data, error, option, setInputVal } = props;
+	const { data, error, option, setInputVal, setIndex } = props;
+
+	const toggleIndex = (e) => {
+		switch (e.key) {
+			case "ArrowUp":
+				setIndex((state) => state - 1);
+				break;
+			case "ArrowDown":
+				setIndex((state) => state + 1);
+			default:
+				break;
+		}
+	};
+
+	useEffect(() => {
+		document.addEventListener("keydown", toggleIndex);
+		window.addEventListener("click", closeResults);
+		return () => {
+			document.removeEventListener("keydown", toggleIndex);
+			window.removeEventListener("click", closeResults);
+		};
+	}, []);
 
 	const closeResults = () => {
 		setInputVal("");
 	};
-
-	useEffect(() => {
-		window.addEventListener("click", closeResults);
-		() => window.removeEventListener("click", closeResults);
-	}, []);
 
 	return (
 		<div className={styles.SearchResults}>
@@ -29,7 +45,7 @@ function SearchResults(props) {
 				</div>
 			)}
 			{data && (
-				<ul className={styles.SearchResults__list}>
+				<ul className={styles.SearchResults__list} ref={ref}>
 					{(data.results.length > 10 ? data.results.slice(0, 10) : data.results).map((result) => {
 						if (option === "person") {
 							const { id, name, popularity, profile_path } = result;
@@ -113,6 +129,6 @@ function SearchResults(props) {
 			)}
 		</div>
 	);
-}
+};
 
-export default SearchResults;
+export default forwardRef(SearchResults);

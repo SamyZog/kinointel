@@ -1,9 +1,17 @@
 import axios from "axios";
+import Head from "next/head";
 import HomePage from "../components/HomePage/HomePage";
 
 export default function Home(props) {
 	const { trending, genres } = props;
-	return <HomePage trending={trending} genres={genres} />;
+	return (
+		<>
+			<Head>
+				<title>KINO WIKI | All About Movies</title>
+			</Head>
+			<HomePage trending={trending} genres={genres} />;
+		</>
+	);
 }
 
 export async function getStaticProps(context) {

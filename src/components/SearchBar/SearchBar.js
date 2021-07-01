@@ -1,19 +1,14 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { useText } from "../../context/TextProvider";
 import styles from "./SearchBar.module.scss";
 
-function SearchBar(props) {
+function SearchBar(props, ref) {
 	const { value, change, currentOption } = props;
 	const { text } = useText();
 
-	const selectText = (e) => {
-		e.stopPropagation();
-		e.target.select();
-	};
-
 	return (
 		<input
-			onClick={selectText}
+			ref={ref}
 			type="text"
 			name=""
 			id=""
@@ -27,4 +22,4 @@ function SearchBar(props) {
 	);
 }
 
-export default SearchBar;
+export default forwardRef(SearchBar);

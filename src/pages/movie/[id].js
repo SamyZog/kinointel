@@ -1,4 +1,5 @@
 import axios from "axios";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
 import MoviePage from "../../components/MoviePage/MoviePage";
@@ -7,7 +8,6 @@ import Spinner from "../../components/Spinner/Spinner";
 function Movie(props) {
 	const { movie, similarMovies, genres } = props;
 	const router = useRouter();
-	console.log(similarMovies);
 
 	if (router.isFallback) {
 		return (
@@ -17,7 +17,14 @@ function Movie(props) {
 		);
 	}
 
-	return <MoviePage data={movie} similarMovies={similarMovies} genresArr={genres} />;
+	return (
+		<>
+			<Head>
+				<title>{movie.title}</title>
+			</Head>
+			<MoviePage data={movie} similarMovies={similarMovies} genresArr={genres} />;
+		</>
+	);
 }
 
 export default Movie;

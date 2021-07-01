@@ -1,4 +1,5 @@
 import axios from "axios";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
 import PersonPage from "../../components/PersonPage/PersonPage";
@@ -17,7 +18,14 @@ function Person(props) {
 		);
 	}
 
-	return <PersonPage person={person} movies={movies} genres={genres} />;
+	return (
+		<>
+			<Head>
+				<title>{person.name}</title>
+			</Head>
+			<PersonPage person={person} movies={movies} genres={genres} />;
+		</>
+	);
 }
 
 export default Person;

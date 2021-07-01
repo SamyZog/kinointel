@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import useSWR from "swr";
 import { v4 } from "uuid";
 import { Close, Loupe } from "../../../public/icons/app";
@@ -18,14 +18,11 @@ function Search(props) {
 	const [inputVal, setInputVal] = useState("");
 	const [currentOption, setCurrentOption] = useState("movie");
 	const [open, setOpen] = useState(false);
+	const [index, setIndex] = useState(0);
+	const [dataLength, setDataLength] = useState(-1);
 
-	useEffect(() => {
-		if (inputVal.length > 0) {
-			setOpen(true);
-		} else {
-			setOpen(false);
-		}
-	}, [inputVal]);
+	const listRef = useRef(null);
+	const inputRef = useRef(null);
 
 	const { data, error } = useSWR(
 		inputVal.length > 0
@@ -33,6 +30,35 @@ function Search(props) {
 			: null,
 		(url) => axios(url).then((res) => res.data),
 	);
+
+	useEffect(() => {
+		if (open && inputVal.length > 0) {
+			return;
+		} else if (inputVal.length > 0) {
+			setOpen(true);
+		} else {
+			setOpen(false);
+		}
+	}, [inputVal]);
+
+	useEffect(() => {
+		if (index < -1) {
+			setIndex(dataLength);
+		} else if (index > dataLength) {
+			setIndex(-1);
+		}
+
+		if (index === -1) {
+			inputRef.current?.focus();
+		} else {
+			listRef.current?.children[index]?.querySelector("a").focus();
+		}
+	}, [index]);
+
+	useEffect(() => {
+		const length = data?.total_results > 10 ? 10 : data?.total_results - 1;
+		setDataLength(length);
+	}, [data]);
 
 	const handleChange = (e) => {
 		setInputVal(e.target.value);
@@ -66,7 +92,7 @@ function Search(props) {
 				/>
 			</div>
 			<div className={styles.Search__searchbar}>
-				<SearchBar value={inputVal} change={handleChange} currentOption={currentOption} />
+				<SearchBar value={inputVal} change={handleChange} currentOption={currentOption} ref={inputRef} />
 				<button className={styles.Search__search}>
 					<Loupe />
 				</button>
@@ -75,11 +101,13 @@ function Search(props) {
 				</button>
 				{open && (
 					<SearchResults
+						setIndex={setIndex}
 						data={data}
 						error={error}
 						option={currentOption}
 						setOpen={setOpen}
 						setInputVal={setInputVal}
+						ref={listRef}
 					/>
 				)}
 			</div>
