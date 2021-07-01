@@ -1,6 +1,5 @@
 import React from "react";
 import Spinner from "../../components/Spinner/Spinner";
-import styles from "./[page].module.scss";
 
 function Movies(props) {
 	const router = useRouter();
@@ -12,7 +11,7 @@ function Movies(props) {
 			</div>
 		);
 	}
-	return <div className={styles}></div>;
+	return <></>;
 }
 
 export default Movies;
