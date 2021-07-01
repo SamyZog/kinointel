@@ -20,7 +20,7 @@ function Movie(props) {
 	return (
 		<>
 			<Head>
-				<title>{movie.title}</title>
+				<title>{movie.title}...</title>
 			</Head>
 			<MoviePage data={movie} similarMovies={similarMovies} genresArr={genres} />;
 		</>
