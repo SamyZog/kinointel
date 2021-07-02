@@ -4,7 +4,6 @@ import HomePage from "../components/HomePage/HomePage";
 
 export default function Home(props) {
 	const { trending, genres } = props;
-	console.log("HOME");
 	return (
 		<>
 			<Head>

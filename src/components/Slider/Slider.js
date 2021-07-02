@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Arrow } from "../../../public/icons/app";
 import CustomLink from "../CustomLink/CustomLink";
 import MovieSliderCard from "../MovieSliderCard/MovieSliderCard";
@@ -7,8 +7,17 @@ import styles from "./Slider.module.scss";
 function Slider(props) {
 	const { data } = props;
 	const [slide, setSlide] = useState(0);
+	const [[initialX, delta, moved], setCoords] = useState([0, 0, false]);
 
 	const windowRef = useRef(null);
+	const intervalIdRef = useRef();
+
+	useEffect(() => {
+		intervalIdRef.current = setInterval(() => {
+			getNextSLide();
+		}, 3000);
+		return () => clearInterval(intervalIdRef);
+	}, [slide]);
 
 	const getNextSLide = () => {
 		setSlide((state) => {
@@ -17,6 +26,7 @@ function Slider(props) {
 			}
 			return state + 1;
 		});
+		clearInterval(intervalIdRef.current);
 	};
 
 	const getPreviousSLide = () => {
@@ -26,11 +36,33 @@ function Slider(props) {
 			}
 			return state - 1;
 		});
+		clearInterval(intervalIdRef.current);
+	};
+
+	const handleTouchStart = (e) => {
+		setCoords((state) => [e.changedTouches[0].clientX, state[1], false]);
+	};
+
+	const handleTouchMove = (e) => {
+		setCoords((state) => [state[0], e.changedTouches[0].clientX, true]);
+	};
+
+	const handleTouchEnd = (e) => {
+		if (moved) {
+			initialX - delta >= 50 && getNextSLide();
+			initialX - delta <= -50 && getPreviousSLide();
+		}
+		setCoords((state) => [0, 0, false]);
 	};
 
 	return (
 		<div className={styles.Slider}>
-			<div className={styles.Slider__window} ref={windowRef}>
+			<div
+				className={styles.Slider__window}
+				ref={windowRef}
+				onTouchStart={handleTouchStart}
+				onTouchMove={handleTouchMove}
+				onTouchEnd={handleTouchEnd}>
 				<button className={styles.Slider__prevbtn} onClick={getPreviousSLide}>
 					<Arrow />
 				</button>
