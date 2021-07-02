@@ -62,7 +62,7 @@ function Pagination(props) {
 					</>
 				)}
 				{pageLinks}
-				{page < totalPages - middleIdx - 1 && (
+				{page <= totalPages - middleIdx && (
 					<>
 						<li className={styles.Pagination__next}>
 							<CustomLink
