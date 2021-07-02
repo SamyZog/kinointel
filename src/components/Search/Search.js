@@ -14,12 +14,13 @@ function Search(props) {
 	const { text } = useText();
 	const { locale } = useRouter();
 	const options = ["movies", "actors"];
-	const optionsText = [text.placeholders.options.movies, text.placeholders.options.actors];
-	const [inputVal, setInputVal] = useState("");
 	const [currentOption, setCurrentOption] = useState("movie");
 	const [open, setOpen] = useState(false);
 	const [index, setIndex] = useState(0);
 	const [dataLength, setDataLength] = useState(-1);
+
+	const [inputVal, setInputVal] = useState("");
+	const optionsText = [text.placeholders.options.movies, text.placeholders.options.actors];
 
 	const listRef = useRef(null);
 	const inputRef = useRef(null);
@@ -60,10 +61,6 @@ function Search(props) {
 		setDataLength(length);
 	}, [data]);
 
-	const handleChange = (e) => {
-		setInputVal(e.target.value);
-	};
-
 	const clearInput = () => {
 		setInputVal("");
 	};
@@ -92,7 +89,13 @@ function Search(props) {
 				/>
 			</div>
 			<div className={styles.Search__searchbar}>
-				<SearchBar value={inputVal} change={handleChange} currentOption={currentOption} ref={inputRef} />
+				<SearchBar
+					inputVal={inputVal}
+					currentOption={currentOption}
+					ref={inputRef}
+					setInputVal={setInputVal}
+					setOpen={setOpen}
+				/>
 				<button className={styles.Search__search}>
 					<Loupe />
 				</button>
@@ -106,7 +109,8 @@ function Search(props) {
 						error={error}
 						option={currentOption}
 						setOpen={setOpen}
-						setInputVal={setInputVal}
+						inputVal={inputVal}
+						clearInput={clearInput}
 						ref={listRef}
 					/>
 				)}

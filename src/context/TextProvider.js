@@ -23,7 +23,7 @@ const text = {
 			},
 			person: {
 				fullname: "имя",
-				birth_day: "день рождения",
+				birth_day: "дата рождения",
 				birthplace: "место рождения",
 				bio: "биография",
 				show: "показать",
@@ -84,7 +84,7 @@ const text = {
 			},
 			person: {
 				fullname: "name",
-				birth_day: "birth day",
+				birth_day: "birth date",
 				birthplace: "place of birth",
 				bio: "biography",
 				show: "show",

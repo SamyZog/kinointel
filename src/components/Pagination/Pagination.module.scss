@@ -1,0 +1,51 @@
+.Pagination {
+	height: var(--i-l);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: var(--p-xl);
+
+	&__pagelist {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		list-style-type: none;
+	}
+	li {
+		font-size: var(--t-s);
+		color: var(--secondary);
+		font-weight: bold;
+		width: fit-content;
+		padding: 0 var(--p-xs);
+		height: var(--i-s);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	a {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	svg {
+		height: var(--i-xs);
+		width: var(--i-xs);
+		fill: var(--common);
+	}
+
+	&__tostart,
+	&__prev {
+		svg {
+			transform: rotate(180deg);
+		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.Pagination {
+		padding: var(--p-s);
+	}
+}

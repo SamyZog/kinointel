@@ -3,8 +3,18 @@ import { useText } from "../../context/TextProvider";
 import styles from "./SearchBar.module.scss";
 
 function SearchBar(props, ref) {
-	const { value, change, currentOption } = props;
+	const { inputVal, currentOption, setInputVal, setOpen } = props;
 	const { text } = useText();
+
+	const handleChange = (e) => {
+		setInputVal(e.target.value);
+	};
+
+	const handleClick = () => {
+		if (inputVal.length > 0) {
+			setOpen(true);
+		}
+	};
 
 	return (
 		<input
@@ -13,8 +23,9 @@ function SearchBar(props, ref) {
 			name=""
 			id=""
 			className={styles.SearchBar}
-			value={value}
-			onChange={change}
+			value={inputVal}
+			onChange={handleChange}
+			onClick={handleClick}
 			placeholder={`${
 				currentOption === "movie" ? text.placeholders.options.movies : text.placeholders.options.actors
 			}...`}

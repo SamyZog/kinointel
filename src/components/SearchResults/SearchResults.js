@@ -9,7 +9,7 @@ import styles from "./SearchResults.module.scss";
 
 const SearchResults = (props, ref) => {
 	const { text } = useText();
-	const { data, error, option, setInputVal, setIndex } = props;
+	const { data, error, option, setIndex, inputVal, clearInput, setOpen } = props;
 
 	const toggleIndex = (e) => {
 		switch (e.key) {
@@ -33,7 +33,7 @@ const SearchResults = (props, ref) => {
 	}, []);
 
 	const closeResults = () => {
-		setInputVal("");
+		setOpen(false);
 	};
 
 	return (
@@ -50,7 +50,7 @@ const SearchResults = (props, ref) => {
 						if (option === "person") {
 							const { id, name, popularity, profile_path } = result;
 							return (
-								<li key={id} className={styles.SearchResults__personListItem} onClick={closeResults}>
+								<li key={id} className={styles.SearchResults__personListItem}>
 									<CustomLink href={`/person/${id}`}>
 										<div className={styles.SearchResults__personPoster}>
 											{profile_path ? (
@@ -87,7 +87,7 @@ const SearchResults = (props, ref) => {
 							}
 
 							return (
-								<li key={id} className={styles.SearchResults__movieListItem} onClick={closeResults}>
+								<li key={id} className={styles.SearchResults__movieListItem} onClick={clearInput}>
 									<CustomLink href={`/movie/${id}`}>
 										<div className={styles.SearchResults__moviePoster}>
 											{poster_path ? (
@@ -121,8 +121,14 @@ const SearchResults = (props, ref) => {
 						}
 					})}
 					{data.results.length > 10 && (
-						<li className={styles.SearchResults__viewAll}>
-							<CustomLink href={``}>View All Results... ({data.total_results})</CustomLink>
+						<li className={styles.SearchResults__viewAll} onClick={clearInput}>
+							<CustomLink
+								href={{
+									pathname: "/movies/",
+									query: { query: inputVal, page: "1" },
+								}}>
+								View All Results... ({data.total_results})
+							</CustomLink>
 						</li>
 					)}
 				</ul>

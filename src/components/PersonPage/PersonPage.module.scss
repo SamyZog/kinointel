@@ -68,3 +68,42 @@
 		padding: var(--p-xl) 0;
 	}
 }
+
+@media screen and (max-width: 600px) {
+	.PersonPage {
+		section {
+			padding: var(--p-xl) var(--p-s);
+		}
+
+		&__name,
+		&__birthday,
+		&__birthplace {
+			text-align: center;
+		}
+
+		&__bioheader {
+			text-align: center;
+		}
+
+		&__img {
+			height: 100%;
+			width: 100%;
+		}
+
+		&__wrapper {
+			gap: var(--g-m);
+			flex-direction: column;
+		}
+
+		&__moviesort {
+			width: 20rem;
+		}
+
+		&__bio {
+			height: 100%;
+			line-height: 2;
+			text-align: justify;
+			font-size: var(--t-xs);
+		}
+	}
+}
