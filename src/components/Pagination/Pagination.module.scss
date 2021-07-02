@@ -8,9 +8,10 @@
 	&__pagelist {
 		width: 100%;
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;
 		align-items: center;
 		list-style-type: none;
+		gap: var(--g-xl);
 	}
 	li {
 		font-size: var(--t-s);
@@ -47,5 +48,9 @@
 @media screen and (max-width: 600px) {
 	.Pagination {
 		padding: var(--p-s);
+
+		&__pagelist {
+			gap: var(--g-s);
+		}
 	}
 }

@@ -21,13 +21,18 @@ export async function getStaticProps(context) {
 		`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.TMDB_API_KEY}&language=${context.locale}`,
 	];
 
-	const res1 = await axios(urls[0]);
-	const res2 = await axios(urls[1]);
+	const res1 = axios(urls[0]);
+	const res2 = axios(urls[1]);
 
-	const [trending, genres] = await Promise.all([res1, res2]);
-
-	return {
-		revalidate: 60 * 60 * 12,
-		props: { trending: trending.data, genres: genres.data.genres },
-	};
+	try {
+		const [trending, genres] = await Promise.all([res1, res2]);
+		return {
+			revalidate: 60 * 60 * 12,
+			props: { trending: trending.data, genres: genres.data.genres },
+		};
+	} catch (error) {
+		return {
+			notFound: true,
+		};
+	}
 }

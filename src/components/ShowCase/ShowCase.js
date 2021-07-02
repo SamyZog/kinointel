@@ -20,7 +20,9 @@ function ShowCase(props) {
 									title={title}
 									className={styles.ShowCase__listitem}
 									style={{
-										backgroundImage: `url(https://image.tmdb.org/t/p/w500${poster_path})`,
+										backgroundImage: poster_path
+											? `url(https://image.tmdb.org/t/p/w500${poster_path})`
+											: "url(https://via.placeholder.com/500.png)",
 									}}>
 									<div className={styles.ShowCase__info}>
 										<p className={styles.ShowCase__title}>{title}</p>

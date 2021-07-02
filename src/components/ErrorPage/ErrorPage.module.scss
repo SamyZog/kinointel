@@ -1,0 +1,26 @@
+.ErrorPage {
+	height: var(--l-desktop);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: var(--p-xl);
+
+	h1 {
+		font-size: 10rem;
+		color: var(--common);
+	}
+
+	svg {
+		width: 100%;
+		fill: var(--common);
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.ErrorPage {
+		h1 {
+			font-size: 7rem;
+		}
+	}
+}

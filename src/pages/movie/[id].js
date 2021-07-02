@@ -36,19 +36,24 @@ export async function getStaticPaths(context) {
 }
 
 export async function getStaticProps(context) {
-	const res1 = await axios(
+	const res1 = axios(
 		`https://api.themoviedb.org/3/movie/${context.params.id}?api_key=${process.env.TMDB_API_KEY}&language=${context.locale}`,
 	);
 
-	const res2 = await axios(
+	const res2 = axios(
 		`https://api.themoviedb.org/3/movie/${context.params.id}/similar?api_key=${process.env.TMDB_API_KEY}&language=${context.locale}&page=1`,
 	);
 
-	const res3 = await axios(
+	const res3 = axios(
 		`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.TMDB_API_KEY}&language=${context.locale}`,
 	);
 
-	const [movie, similarMovies, genres] = await Promise.all([res1, res2, res3]);
-
-	return { props: { movie: movie.data, similarMovies: similarMovies.data, genres: genres.data } };
+	try {
+		const [movie, similarMovies, genres] = await Promise.all([res1, res2, res3]);
+		return { props: { movie: movie.data, similarMovies: similarMovies.data, genres: genres.data } };
+	} catch (error) {
+		return {
+			notFound: true,
+		};
+	}
 }
