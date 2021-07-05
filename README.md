@@ -79,7 +79,7 @@ Go to the project directory
   cd kinowiki
 ```
 
-Create .env.local file and add your api key
+Create <pre>.env.local</pre> file and add your api key
 
 ```bash
   echo "TMDB_API_KEY=<<your_api_key>>" > .env.local
