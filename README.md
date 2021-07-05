@@ -1,3 +1,11 @@
+# Index
+
+- [Motivation](#motivation)
+- [Development phase](#dev-phase)
+- [Tech Stack / Dependencies](#deps)
+- [Features](features)
+- [Run locally](#run)
+- [Authors](#authors)
 
 <h1>KinoWiki</h1>
 
