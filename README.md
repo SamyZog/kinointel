@@ -48,6 +48,7 @@ Concerning the app's functionality and logic, it was pretty straight-forward in 
 - [Axios](https://github.com/axios/axios)
 - [SWR](https://swr.vercel.app/)
 - [uuid](https://www.npmjs.com/package/uuid)
+- [SVGR](https://react-svgr.com/)
 
   
 <h2 id="features">Features</h2>
