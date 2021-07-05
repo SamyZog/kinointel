@@ -5,26 +5,27 @@ This is a small project built on top of the [MovieDB API](https://www.themoviedb
 
 It is a web app that lets users search and find movies and actors, lookup similar movies and view a perosn's filmography.
 
-## Demo
+<h2 id="demo">Demo</h2>
 
 [KinoWIKI](https://kinowiki.vercel.app/)
 
   
-## Motivation
+<h2 id="motivation">Motivation</h2>
 
 This is my first ever project since I started learning front-end development.
 
 It is made as a potfolio project to showcase to recruiters. 
 
-  
-## Development phase
+
+<h2 id="dev-phase">Development phase</h2>
 
 This was not a particularily difficult project to create.
 
 The most time consuming aspect of the project was figuring out the file structure, maintinaining component re-usability and applying styling and responsiveness.
 
 Concerning the app's functionality and logic, it was pretty straight-forward in implementation. By leveraging the SSR and SSG and the MovieDB API coupled with SWR's automatic request caching, it was an overall pleasant experience and I enjoyed my time working on it. 
-## Tech Stack / Dependencies
+
+<h2 id="deps">Tech Stack / Dependencies</h2>
 
 - [NextJS](https://nextjs.org/)
 - [React](https://reactjs.org/)
@@ -34,7 +35,7 @@ Concerning the app's functionality and logic, it was pretty straight-forward in 
 - [uuid](https://www.npmjs.com/package/uuid)
 
   
-## Features
+<h2 id="features">Features</h2>
 
 - Light/dark mode toggle
 - Display language toggle (ru, en)
@@ -46,7 +47,7 @@ Concerning the app's functionality and logic, it was pretty straight-forward in 
 - Sorting movies by year, by genre, by popularity and alphabetically   
 
   
-## Run Locally
+<h2 id="run">Run Locally</h2>
 
 Clone the project
 
@@ -73,7 +74,7 @@ Start the server
 ```
 
   
-## Authors
+<h2 id="authors">Authors</h2>
 
 - [@SamyZog](https://www.github.com/SamyZog)
 
