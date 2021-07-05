@@ -1,5 +1,5 @@
 
-# KinoWiki
+<h1>KinoWiki</h1>
 
 This is a small project built on top of the [MovieDB API](https://www.themoviedb.org/) using [NextJS](https://nextjs.org/).
 
