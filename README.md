@@ -11,7 +11,7 @@
 
 <h2>KinoWiki</h2>
 
-This is a small project built on top of the [MovieDB API](https://www.themoviedb.org/) using [NextJS](https://nextjs.org/).
+This is a small project built on top of the [MovieDB API](https://www.themoviedb.org/documentation/api) using [NextJS](https://nextjs.org/).
 
 It is a web app that lets users search and find movies or actors, lookup similar movies to the ones searched for and view a perosn's filmography.
 
@@ -65,7 +65,7 @@ Concerning the app's functionality and logic, it was pretty straight-forward in 
   
 <h2 id="run">Run Locally</h2>
 
-To run the project locally you have to provide your own MovieDB API key.
+To run the project locally you have to provide your own [MovieDB](https://www.themoviedb.org/documentation/api) API key.
 
 Clone the project
 
@@ -79,7 +79,7 @@ Go to the project directory
   cd kinowiki
 ```
 
-Create <code>.env.local</code> file and add your api key
+Create <code>.env.local</code> file and add your API key
 
 ```bash
   echo "TMDB_API_KEY=<<your_api_key>>" > .env.local
