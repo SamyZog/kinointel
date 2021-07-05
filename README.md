@@ -79,13 +79,7 @@ Go to the project directory
   cd kinowiki
 ```
 
-Create <code>.env.local</code> file and add these two lines:
-
-<code>TMDB_API_KEY=<<your_api_key>></code><br/>
-<code>NEXT_PUBLIC_TMDB_API_KEY=<<your_api_key>></code>
-
-Replacing <<your_api_key>> with the you own.
-
+Create <code>.env.local</code> file and run these commands:
 
 ```bash
   echo "TMDB_API_KEY=<<your_api_key>>" > .env.local
@@ -94,6 +88,8 @@ Replacing <<your_api_key>> with the you own.
 ```bash
   echo "NEXT_PUBLIC_TMDB_API_KEY=<<your_api_key>>" >> .env.local"
 ```
+
+Replacing <<your_api_key>> with your own MovieDB API key.
 
 Install dependencies
 
