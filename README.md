@@ -9,7 +9,7 @@
 - [Run locally](#run)
 - [Authors](#authors)
 
-<h1>KinoWiki</h1>
+<h2>KinoWiki</h2>
 
 This is a small project built on top of the [MovieDB API](https://www.themoviedb.org/) using [NextJS](https://nextjs.org/).
 
