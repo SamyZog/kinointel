@@ -3,7 +3,7 @@
 - [Motivation](#motivation)
 - [Development phase](#dev-phase)
 - [Tech Stack / Dependencies](#deps)
-- [Features](features)
+- [Features](#features)
 - [Run locally](#run)
 - [Authors](#authors)
 
