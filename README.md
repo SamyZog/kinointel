@@ -62,9 +62,6 @@ Concerning the app's functionality and logic, it was pretty straight-forward in 
   
 <h2 id="run">Run Locally</h2>
 
-
-## Run Locally
-
 To run the project locally you have to provide your own MovieDB API key.
 
 Clone the project
