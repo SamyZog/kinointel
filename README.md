@@ -34,9 +34,11 @@ It is made as a potfolio project to showcase to recruiters.
 
 This was not a particularily difficult project to create.
 
-The most time consuming aspect of the project was figuring out the file structure, maintinaining component re-usability and applying styling and responsiveness.
+I used a combination of SSG, SSR and ISR to create the different pages and components, also used SWR which is a great tool to fetch and cache data in NextJS applications.
 
-Concerning the app's functionality and logic, it was pretty straight-forward in implementation. By leveraging the SSR and SSG and the MovieDB API coupled with SWR's automatic request caching, it was an overall pleasant experience and I enjoyed my time working on it. 
+The most time consuming aspect of the project was figuring out the file structure, maintinaining component re-usability and applying styling/responsiveness.
+
+Concerning the app's functionality and logic, it was pretty straight-forward in implementation. By leveraging the SSR, SSG and ISR and the MovieDB API coupled with SWR's automatic request caching, it was an overall pleasant experience and I enjoyed my time working on it. 
 
 <h2 id="deps">Tech Stack / Dependencies</h2>
 
