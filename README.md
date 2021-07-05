@@ -1,34 +1,77 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# KinoWiki
 
-First, run the development server:
+This is a small project built on top of the [MovieDB API](https://www.themoviedb.org/) using [NextJS](https://nextjs.org/).
+
+It is a web app that lets users search and find movies and actors, lookup similar movies and view a perosn's filmography.
+
+## Demo
+
+[KinoWIKI](https://kinowiki.vercel.app/)
+
+  
+## Motivation
+
+This is my first ever project since I started learning front-end development.
+
+It is made as a potfolio project to showcase to recruiters. 
+
+  
+## Development phase
+
+This was not a particularily difficult project to create.
+
+The most time consuming aspect of the project was figuring out the file structure, maintinaining component re-usability and applying styling and responsiveness.
+
+Concerning the app's functionality and logic, it was pretty straight-forward in implementation. By leveraging the SSR and SSG and the MovieDB API coupled with SWR's automatic request caching, it was an overall pleasant experience and I enjoyed my time working on it. 
+## Tech Stack / Dependencies
+
+- [NextJS](https://nextjs.org/)
+- [React](https://reactjs.org/)
+- [Sass](https://sass-lang.com/)
+- [Axios](https://github.com/axios/axios)
+- [SWR](https://swr.vercel.app/)
+- [uuid](https://www.npmjs.com/package/uuid)
+
+  
+## Features
+
+- Light/dark mode toggle
+- Display language toggle (ru, en)
+- Search functionality
+- Trending movies slider
+- Responsive design
+
+  
+## Run Locally
+
+Clone the project
 
 ```bash
-npm run dev
-# or
-yarn dev
+  git clone https://github.com/SamyZog/kinowiki
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Go to the project directory
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```bash
+  cd kinowiki
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Install dependencies
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+  npm install
+```
 
-## Learn More
+Start the server
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+  npm run start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  
+## Authors
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- [@SamyZog](https://www.github.com/SamyZog)
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+  
