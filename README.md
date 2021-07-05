@@ -82,8 +82,11 @@ Go to the project directory
 Create .env.local file and add your api key
 
 ```bash
-  echo "echo "TMDB_API_KEY=<<api_key>>" > .env.local
-  echo "NEXT_PUBLIC_TMDB_API_KEY=<<api_key>>" >> .env.local"  
+  echo "echo "TMDB_API_KEY=<<your_api_key>>" > .env.local
+```
+
+```bash
+  echo "NEXT_PUBLIC_TMDB_API_KEY=<<your_api_key>>" >> .env.local"
 ```
 
 Install dependencies
