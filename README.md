@@ -1,5 +1,7 @@
 # Index
 
+- [Demo](#demo)
+- [Hosting](#host)
 - [Motivation](#motivation)
 - [Development phase](#dev-phase)
 - [Tech Stack / Dependencies](#deps)
@@ -17,6 +19,9 @@ It is a web app that lets users search and find movies or actors, lookup similar
 
 [KinoWIKI](https://kinowiki.vercel.app/)
 
+<h2 id="host">Hosting</h2>
+
+This web app is hosted on [Vercel](https://vercel.com/)
   
 <h2 id="motivation">Motivation</h2>
 
