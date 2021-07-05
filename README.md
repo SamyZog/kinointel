@@ -62,6 +62,11 @@ Concerning the app's functionality and logic, it was pretty straight-forward in 
   
 <h2 id="run">Run Locally</h2>
 
+
+## Run Locally
+
+To run the project locally you have to provide your own MovieDB API key.
+
 Clone the project
 
 ```bash
@@ -72,6 +77,13 @@ Go to the project directory
 
 ```bash
   cd kinowiki
+```
+
+Create .env.local file and add your api key
+
+```bash
+  echo "echo "TMDB_API_KEY=<<api_key>>" > .env.local
+  echo "NEXT_PUBLIC_TMDB_API_KEY=<<api_key>>" >> .env.local"  
 ```
 
 Install dependencies
