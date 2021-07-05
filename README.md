@@ -81,7 +81,8 @@ Go to the project directory
 
 Create <code>.env.local</code> file and add these two lines:
 
-<code>TMDB_API_KEY=<<your_api_key>><br/>NEXT_PUBLIC_TMDB_API_KEY=<<your_api_key>></code>
+<code>TMDB_API_KEY=<<your_api_key>>
+  NEXT_PUBLIC_TMDB_API_KEY=<<your_api_key>></code>
 
 Replacing <<your_api_key>> with the you own.
 
