@@ -50,8 +50,8 @@ Concerning the app's functionality and logic, it was pretty straight-forward in 
   
 <h2 id="features">Features</h2>
 
-- Light/dark mode toggle
-- Display language toggle (ru, en)
+- Light/dark mode toggle persisted on page reloads
+- Display language toggle en/ru persisted on page reloads
 - Search functionality (movies, actors)
 - Pagination for movie search results (the link to the pagination page is appended to the search result list)
 - Custom 404 page
