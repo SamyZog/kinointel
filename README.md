@@ -13,7 +13,7 @@
 
 This is a small project built on top of the [MovieDB](https://www.themoviedb.org/documentation/api) API using [NextJS](https://nextjs.org/).
 
-It is a web app that lets users search and find movies or actors, lookup similar movies to the ones searched for and view a perosn's filmography.
+It is a web app that lets users search and find movies or actors, lookup similar movies to the ones searched for and view a person's filmography.
 
 <h2 id="demo">Demo</h2>
 
