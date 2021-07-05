@@ -38,7 +38,9 @@ I used a combination of SSG, SSR and ISR to create the different pages and compo
 
 The most time consuming aspect of the project was figuring out the file structure, maintinaining component re-usability and applying styling/responsiveness.
 
-Concerning the app's functionality and logic, it was pretty straight-forward in implementation. By leveraging the SSR, SSG and ISR and the MovieDB API coupled with SWR's automatic request caching, it was an overall pleasant experience and I enjoyed my time working on it. 
+Concerning the app's functionality and logic, it was pretty straight-forward in implementation. By leveraging the SSR, SSG and ISR and the MovieDB API coupled with SWR's automatic request caching, it was an overall pleasant experience and I enjoyed my time working on it.
+
+N.B: some API endpoints and queries do not provide localized responses, this is why some movie titles and descriptions display in English regardless of chosen locale.
 
 <h2 id="deps">Tech Stack / Dependencies</h2>
 
