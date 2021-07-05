@@ -79,7 +79,7 @@ Go to the project directory
   cd kinowiki
 ```
 
-Create <code>.env.local</code> file and run these commands replacing <<your_api_key>> with your own MovieDB API key:
+Create <code>.env.local</code> file and run these commands replacing <code><<your_api_key>></code> with your own MovieDB API key:
 
 ```bash
   echo "TMDB_API_KEY=<<your_api_key>>" > .env.local
