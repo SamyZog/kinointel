@@ -38,9 +38,12 @@ Concerning the app's functionality and logic, it was pretty straight-forward in 
 
 - Light/dark mode toggle
 - Display language toggle (ru, en)
-- Search functionality
-- Trending movies slider
-- Responsive design
+- Search functionality (movies, actors)
+- Pagination for movie search results (the link to the pagination page is appended to the search result list)
+- Custom 404 page
+- Movies slider (top 10 trending movies)
+- Responsive design (grid, flexbox)
+- Sorting movies by year, by genre, by popularity and alphabetically   
 
   
 ## Run Locally
