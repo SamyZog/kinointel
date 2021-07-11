@@ -59,16 +59,15 @@ Some API endpoints and queries do not provide localized responses, this is why s
   
 <h2 id="features">Features</h2>
 
-- Light/dark mode toggle persisted on page reloads
-- Display language toggle en/ru persisted on page reloads
+- Light/dark modes, persisted on page reloads
+- Display language toggle with locale persistance on page reloads
 - Search functionality (movies, actors)
-- Pagination for movie search results (the link to the pagination page is appended to the search result list)
+- Pagination for movie search results (the link to the paginated results page is at the bottom of to the search result list)
 - Custom 404 page
 - Movies slider (top 10 trending movies)
 - Responsive design (grid, flexbox)
 - Sorting movies by year, genre, popularity and alphabetically   
 
-  
 <h2 id="run">Run Locally</h2>
 
 To run the project locally you have to provide your own [MovieDB](https://www.themoviedb.org/documentation/api) API key.
