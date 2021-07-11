@@ -66,7 +66,7 @@ Some API endpoints and queries do not provide localized responses, this is why s
 - Custom 404 page
 - Movies slider (top 10 trending movies)
 - Responsive design (grid, flexbox)
-- Sorting movies by year, by genre, by popularity and alphabetically   
+- Sorting movies by year, genre, popularity and alphabetically   
 
   
 <h2 id="run">Run Locally</h2>
