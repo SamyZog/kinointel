@@ -27,10 +27,9 @@ This web app is hosted on [Vercel](https://vercel.com/)
   
 <h2 id="motivation">Motivation</h2>
 
-This is my first ever project since I started learning front-end development.
+This is my first full fledged project since I started learning front-end development.
 
-It is made as a potfolio project to showcase to recruiters. 
-
+It is made as a potfolio project to showcase to recruiters.
 
 <h2 id="dev-phase">Development phase</h2>
 
