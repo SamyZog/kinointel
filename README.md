@@ -2,6 +2,7 @@
 
 # Index
 
+- [Title](#title)
 - [Demo](#demo)
 - [Hosting](#host)
 - [Motivation](#motivation)
@@ -12,7 +13,7 @@
 - [Run locally](#run)
 - [Authors](#authors)
 
-<h2>KinoWiki</h2>
+<h2 id="title">Kinowiki</h2>
 
 This is a small project built on top of the [MovieDB](https://www.themoviedb.org/documentation/api) API using [NextJS](https://nextjs.org/).
 
