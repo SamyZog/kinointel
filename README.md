@@ -13,9 +13,7 @@
 
 <h2 id="title">Kinowiki</h2>
 
-This is a small project built on top of the [MovieDB](https://www.themoviedb.org/documentation/api) API using [NextJS](https://nextjs.org/).
-
-It is a web app that lets users search and find movies or actors, lookup similar movies to the ones searched for and view a person's filmography.
+A single page movie database, lets users search and view movies and actors information. Supports Russian and English languages. Built with next.js and the MovieDB API.
 
 <h2 id="demo">Demo</h2>
 
@@ -47,13 +45,13 @@ Some API endpoints and queries do not provide localized responses, this is why s
 
 <h2 id="deps">Tech Stack / Dependencies</h2>
 
-- [NextJS](https://nextjs.org/)
-- [React](https://reactjs.org/)
-- [Sass](https://sass-lang.com/)
-- [Axios](https://github.com/axios/axios)
-- [SWR](https://swr.vercel.app/)
+- [next.js](https://nextjs.org/)
+- [react](https://reactjs.org/)
+- [sass](https://sass-lang.com/)
+- [axios](https://github.com/axios/axios)
+- [swr](https://swr.vercel.app/)
 - [uuid](https://www.npmjs.com/package/uuid)
-- [SVGR](https://react-svgr.com/)
+- [svgr](https://react-svgr.com/)
 
   
 <h2 id="features">Features</h2>
